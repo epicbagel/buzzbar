@@ -82,15 +82,29 @@ python3 -m unittest test_buzzctl     # 11 tests, no Buzz install needed
 ./buzzctl.py status                  # what the bar polls
 ```
 
-## Enabling
+## Install
 
-Add it to a bar section in `~/.config/omarchy/shell.json`:
+```bash
+omarchy plugin add https://github.com/epicbagel/buzzbar.git --enable
+```
+
+Or add it to a bar section in `~/.config/omarchy/shell.json` by hand:
 
 ```jsonc
 { "id": "io.github.epicbagel.buzzbar" }
 ```
 
 The file hot-reloads on save.
+
+## Remove
+
+```bash
+omarchy plugin disable io.github.epicbagel.buzzbar
+omarchy plugin remove io.github.epicbagel.buzzbar
+```
+
+Nothing outside the plugin's own cache is touched, and no message, channel or key is ever written — the plugin only ever reads
+Buzz's cache.
 
 ## License
 
