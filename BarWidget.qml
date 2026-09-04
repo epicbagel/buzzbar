@@ -130,8 +130,6 @@ BarWidget {
     function show(): void { root.open() }
     function hide(): void { root.close() }
     function toggle(): void { root.toggle() }
-)
-    }
   }
 
   BarIconButton {
